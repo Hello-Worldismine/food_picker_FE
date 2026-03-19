@@ -10,7 +10,7 @@ import {
 } from 'recharts'
 import { getProductById } from '../mock/mockData'
 import { useAppState } from '../context/AppStateContext'
-import ProductDetailHero from '../components/detail/ProductDetailHero'
+import ProductDetailHero from '../components/Detail/ProductDetailHero'
 import PriceAlertModal from '../components/Modals/PriceAlertModal'
 import ReservationModal from '../components/Modals/ReservationModal'
 

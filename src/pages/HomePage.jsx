@@ -1,7 +1,7 @@
 import HeroBanner from '../components/Home/HeroBanner'
-import MapCard from '../components/home/MapCard'
-import ProductTickerCard from '../components/home/ProductTickerCard'
-import SectionTitle from '../components/common/SectionTitle'
+import MapCard from '../components/Home/MapCard'
+import ProductTickerCard from '../components/Home/ProductTickerCard'
+import SectionTitle from '../components/Common/SectionTitle'
 import { products } from '../mock/mockData'
 
 function HomePage() {
