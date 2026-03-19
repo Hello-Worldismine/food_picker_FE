@@ -1,6 +1,6 @@
-import PageHeader from '../components/common/PageHeader'
-import EmptyReservation from '../components/pickup/EmptyReservation'
-import ReservationCard from '../components/pickup/ReservationCard'
+import PageHeader from '../components/Common/PageHeader'
+import EmptyReservation from '../components/Pickup/EmptyReservation'
+import ReservationCard from '../components/Pickup/ReservationCard'
 import { useAppState } from '../context/AppStateContext'
 
 function ReservationPage() {

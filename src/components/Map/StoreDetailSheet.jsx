@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MapPin, Clock3, X } from 'lucide-react'
 import StoreProductRow from './StoreProductRow'
-import PriceAlertModal from '../modals/PriceAlertModal'
+import PriceAlertModal from '../Modals/PriceAlertModal'
 import { useAppState } from '../../context/AppStateContext'
 
 function StoreDetailSheet({ store, onClose }) {
