@@ -277,11 +277,9 @@ export const userInfo = {
   export const homeCategories = [
     { id: 1, label: '마감직전', emoji: '📉', active: true },
     { id: 2, label: '초밥', emoji: '🍣' },
-    { id: 3, label: '샌드위치', emoji: '🥪' },
     { id: 4, label: '베이커리', emoji: '🥐' },
     { id: 5, label: '도시락', emoji: '🍱' },
     { id: 6, label: '샐러드', emoji: '🥗' },
-    { id: 7, label: '디저트', emoji: '🍰' },
     { id: 8, label: '음료', emoji: '🥤' },
     { id: 9, label: '즉석식품', emoji: '🍜' },
     { id: 10, label: '이벤트', emoji: '🎁', badge: '특가' },
