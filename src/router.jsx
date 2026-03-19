@@ -7,6 +7,7 @@ import MyPage from './pages/MyPage'
 import LoginPage from './pages/LoginPage'
 import MapPage from './pages/MapPage'
 import ProductDetailPage from './pages/ProductDetailPage'
+import CategoryProductsPage from './pages/CategoryProductsPage'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: 'map', element: <MapPage /> },
       { path: 'product/:productId', element: <ProductDetailPage /> },
+      { path: 'category/:categoryName', element: <CategoryProductsPage /> },
       { path: 'notifications', element: <NotificationsPage /> },
       { path: 'reservation', element: <ReservationPage /> },
       { path: 'mypage', element: <MyPage /> },
