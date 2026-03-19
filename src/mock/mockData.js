@@ -273,3 +273,48 @@ export const userInfo = {
   
     return null
   }
+
+  export const homeCategories = [
+    { id: 1, label: '마감직전', emoji: '📉', active: true },
+    { id: 2, label: '초밥', emoji: '🍣' },
+    { id: 3, label: '샌드위치', emoji: '🥪' },
+    { id: 4, label: '베이커리', emoji: '🥐' },
+    { id: 5, label: '도시락', emoji: '🍱' },
+    { id: 6, label: '샐러드', emoji: '🥗' },
+    { id: 7, label: '디저트', emoji: '🍰' },
+    { id: 8, label: '음료', emoji: '🥤' },
+    { id: 9, label: '즉석식품', emoji: '🍜' },
+    { id: 10, label: '이벤트', emoji: '🎁', badge: '특가' },
+  ]
+  export function getFilteredProductsByCategory(categoryLabel) {
+    if (!categoryLabel || categoryLabel === '전체') {
+      return products
+    }
+  
+    if (categoryLabel === '마감세일') {
+      return [...products].sort((a, b) => a.remainMinutes - b.remainMinutes)
+    }
+  
+    if (categoryLabel === '이벤트') {
+      return products.filter((item) => item.dropRate >= 35)
+    }
+  
+    const categoryMap = {
+      초밥: '초밥',
+      샌드위치: '샌드위치',
+      베이커리: '베이커리',
+      도시락: '도시락',
+      샐러드: '샐러드',
+      디저트: '디저트',
+      음료: '음료',
+      한그릇: '한그릇',
+    }
+  
+    const mappedCategory = categoryMap[categoryLabel]
+  
+    if (!mappedCategory) {
+      return products
+    }
+  
+    return products.filter((item) => item.category === mappedCategory)
+  }
