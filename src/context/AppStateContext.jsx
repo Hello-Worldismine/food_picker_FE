@@ -1,32 +1,34 @@
 import { createContext, useContext, useMemo, useState } from 'react'
 import { notifications as initialNotifications } from '../mock/mockData'
-
 const AppStateContext = createContext(null)
 
 export function AppStateProvider({ children }) {
   const [reservationItems, setReservationItems] = useState([])
   const [alertItems, setAlertItems] = useState(initialNotifications)
 
-  const reserveProduct = ({ storeName, product, quantity }) => {
+  const reserveProduct = ({ store, product, quantity }) => {
     const now = new Date()
     const pickupTime = new Date(now.getTime() + 30 * 60 * 1000)
-
+  
     const yyyy = pickupTime.getFullYear()
     const mm = String(pickupTime.getMonth() + 1).padStart(2, '0')
     const dd = String(pickupTime.getDate()).padStart(2, '0')
     const hh = String(pickupTime.getHours()).padStart(2, '0')
     const min = String(pickupTime.getMinutes()).padStart(2, '0')
-
+  
     const reservationId = `reservation-${Date.now()}-${Math.floor(Math.random() * 1000)}`
     const unitPrice = product.currentPrice
     const totalPrice = unitPrice * quantity
-
+  
     const newReservation = {
       id: reservationId,
       hasReservation: true,
-      storeName,
+      storeName: store?.name || '',
+      storeAddress: store?.address || '',
+      storePosition: store?.position || null,
       productId: product.id,
       productName: product.title,
+      productImage: product.image,
       quantity,
       unitPrice,
       price: totalPrice,
@@ -34,7 +36,7 @@ export function AppStateProvider({ children }) {
       orderNo: `FT-${Date.now()}`,
       qrText: `FOOD-TICKER-${product.id}-${Date.now()}`,
     }
-
+  
     setReservationItems((prev) => [newReservation, ...prev])
   }
 

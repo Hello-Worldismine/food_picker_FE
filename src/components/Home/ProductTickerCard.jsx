@@ -19,11 +19,15 @@ function ProductTickerCard({ item }) {
 
   const handleConfirmReservation = (quantity) => {
     reserveProduct({
-      storeName: item.storeName,
+      store: {
+        name: item.storeName,
+        address: item.storeAddress || '',
+        position: item.storePosition || null,
+      },
       product: liveProduct,
       quantity,
     })
-
+  
     setIsReservationModalOpen(false)
     navigate('/reservation')
   }
@@ -35,22 +39,28 @@ function ProductTickerCard({ item }) {
           className="ticker-card__top clickable"
           onClick={() => navigate(`/product/${item.id}`)}
         >
-          <div>
-            <span className="category-badge">{item.category}</span>
-            <h3>{item.title}</h3>
-            <p className="store-name">
-              <Store size={14} />
-              {item.storeName} · {item.distance}
-            </p>
+          <div className="ticker-card__thumb">
+            <img src={item.image} alt={item.title} />
           </div>
 
-          <div className="price-box">
-            <strong>{livePrice.toLocaleString()}원</strong>
-            <span className="price-drop">▼ {item.dropRate}%</span>
+          <div className="ticker-card__main">
+            <div>
+              <span className="category-badge">{item.category}</span>
+              <h3>{item.title}</h3>
+              <p className="store-name">
+                <Store size={14} />
+                {item.storeName} · {item.distance}
+              </p>
+            </div>
+
+            <div className="price-box">
+              <strong>{livePrice.toLocaleString()}원</strong>
+              <span className="price-drop">▼ {item.dropRate}%</span>
+            </div>
           </div>
         </div>
 
-        <PriceMiniChart data={item.chart} />
+        <PriceMiniChart data={liveProduct.chart} />
 
         <div className="ticker-card__meta">
           <span>

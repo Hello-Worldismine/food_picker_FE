@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Clock3, Package } from 'lucide-react'
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   ResponsiveContainer,
   XAxis,
   Tooltip,
@@ -12,7 +12,7 @@ import useMockTicker from '../../hooks/useMockTicker'
 import { useAppState } from '../../context/AppStateContext'
 import ReservationModal from '../Modals/ReservationModal'
 
-function StoreProductRow({ product, storeName, onOpenAlert }) {
+function StoreProductRow({ product, store, onOpenAlert }) {
   const navigate = useNavigate()
   const livePrice = useMockTicker(product.currentPrice)
   const { reserveProduct } = useAppState()
@@ -25,11 +25,11 @@ function StoreProductRow({ product, storeName, onOpenAlert }) {
 
   const handleConfirmReservation = (quantity) => {
     reserveProduct({
-      storeName,
+      store,
       product: liveProduct,
       quantity,
     })
-
+  
     setIsReservationModalOpen(false)
     navigate('/reservation')
   }
@@ -41,6 +41,10 @@ function StoreProductRow({ product, storeName, onOpenAlert }) {
           className="store-product-row__content clickable"
           onClick={() => navigate(`/product/${product.id}`)}
         >
+          <div className="store-product-row__thumb">
+            <img src={product.image} alt={product.title} />
+          </div>
+
           <div className="store-product-row__left">
             <span className="category-badge small">{product.category}</span>
             <h4>{product.title}</h4>
@@ -70,16 +74,11 @@ function StoreProductRow({ product, storeName, onOpenAlert }) {
 
         <div className="sheet-mini-chart">
           <ResponsiveContainer width="100%" height={70}>
-            <LineChart data={product.chart}>
+            <BarChart data={product.chart}>
               <XAxis dataKey="time" hide />
               <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="price"
-                strokeWidth={2}
-                dot={false}
-              />
-            </LineChart>
+              <Bar dataKey="price" radius={[6, 6, 0, 0]} />
+            </BarChart>
           </ResponsiveContainer>
         </div>
 
@@ -100,7 +99,7 @@ function StoreProductRow({ product, storeName, onOpenAlert }) {
         isOpen={isReservationModalOpen}
         onClose={() => setIsReservationModalOpen(false)}
         product={liveProduct}
-        storeName={storeName}
+        storeName={store?.name}
         onConfirm={handleConfirmReservation}
       />
     </>

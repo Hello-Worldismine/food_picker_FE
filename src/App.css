@@ -236,9 +236,11 @@
 }
 
 .price-box strong {
-  display: block;
+  display: inline-block;
   font-size: 20px;
   color: #111827;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .price-drop {
@@ -823,10 +825,12 @@
 }
 
 .store-product-row__right strong {
-  display: block;
+  display: inline-block;
   font-size: 20px;
   font-weight: 900;
   color: #111827;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .inline-meta {
@@ -1005,6 +1009,8 @@
 .detail-price-row strong {
   font-size: 28px;
   font-weight: 900;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .detail-origin-price {
@@ -1565,4 +1571,386 @@
   font-size: 14px;
   color: #6b7280;
   line-height: 1.5;
+}
+
+.ticker-card__top {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.ticker-card__thumb {
+  width: 96px;
+  min-width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.ticker-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ticker-card__main {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.store-product-row__content {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.store-product-row__thumb {
+  width: 88px;
+  min-width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.store-product-row__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reservation-card__product {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.reservation-card__thumb {
+  width: 84px;
+  min-width: 84px;
+  height: 84px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.reservation-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reservation-card__product-info h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.reservation-card__product-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.reservation-map-box {
+  margin: 16px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.reservation-map-box__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.reservation-map-box__canvas {
+  position: relative;
+  height: 150px;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(16,185,129,0.1), transparent 20%),
+    radial-gradient(circle at 75% 35%, rgba(59,130,246,0.1), transparent 22%),
+    linear-gradient(135deg, #eef6ff 0%, #f8fafc 100%);
+}
+
+.reservation-map-box__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.reservation-map-pin {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50% 50% 50% 0;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: #ef4444;
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.25);
+}
+
+.reservation-map-pin::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+@media (max-width: 390px) {
+  .ticker-card__top,
+  .ticker-card__main,
+  .store-product-row__content {
+    flex-direction: column;
+  }
+
+  .ticker-card__thumb,
+  .store-product-row__thumb {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.detail-store-map {
+  margin-top: 14px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.detail-store-map__header {
+  padding: 12px 14px;
+  background: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.detail-store-map__canvas {
+  position: relative;
+  height: 160px;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(16,185,129,0.1), transparent 20%),
+    radial-gradient(circle at 75% 35%, rgba(59,130,246,0.1), transparent 22%),
+    linear-gradient(135deg, #eef6ff 0%, #f8fafc 100%);
+}
+
+.detail-store-map__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.detail-store-map__pin {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50% 50% 50% 0;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background: #ef4444;
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.25);
+}
+
+.detail-store-map__pin::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+
+.mini-chart-card {
+  margin: 14px 0 10px;
+  padding: 12px 12px 10px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+}
+
+.mini-chart-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mini-chart-summary__item {
+  padding: 10px;
+  border-radius: 14px;
+  background: white;
+}
+
+.mini-chart-summary__item span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.mini-chart-summary__item strong {
+  font-size: 13px;
+  font-weight: 900;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.mini-chart-summary__item.current {
+  background: #eff6ff;
+}
+
+.mini-chart-summary__item.down {
+  background: #fef2f2;
+}
+
+.mini-chart-summary__item.down strong {
+  color: #dc2626;
+}
+
+.mini-chart {
+  margin: 0;
+  padding: 0;
+}
+
+.mini-chart-axis-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+@media (max-width: 390px) {
+  .mini-chart-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-chart-top-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.detail-chart-chip {
+  padding: 12px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.detail-chart-chip span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.detail-chart-chip strong {
+  font-size: 15px;
+  font-weight: 900;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.detail-chart-chip.current {
+  background: #eff6ff;
+}
+
+.detail-chart-chip.saving {
+  background: #fef2f2;
+}
+
+.detail-chart-chip.saving strong {
+  color: #dc2626;
+}
+
+.detail-chart-insight {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.detail-chart-insight p {
+  margin: 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.detail-chart-insight strong {
+  color: #111827;
+  font-weight: 900;
+}
+
+.detail-chart-insight span {
+  color: #9ca3af;
+  margin-left: 4px;
+}
+
+.detail-chart-wrap.enhanced {
+  margin-top: 6px;
+}
+
+.detail-chart-caption {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-chart-caption strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.detail-chart-caption span {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.detail-chart-caption em {
+  font-style: normal;
+  font-weight: 900;
+  color: #dc2626;
+}
+
+@media (max-width: 390px) {
+  .detail-chart-top-summary {
+    grid-template-columns: 1fr;
+  }
 }
