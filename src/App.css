@@ -350,6 +350,93 @@
   gap: 16px;
 }
 
+.mypage-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.06);
+}
+
+.mypage-profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.mypage-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mypage-profile-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.mypage-profile-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.mypage-menu-card {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.06);
+}
+
+.mypage-menu-item {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 18px;
+  border: none;
+  border-bottom: 1px solid #eef2f7;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.mypage-menu-item:last-child {
+  border-bottom: none;
+}
+
+.mypage-menu-arrow {
+  font-size: 18px;
+  color: #9ca3af;
+}
+
+.mypage-menu-item.logout {
+  color: #949494;
+}
+
+.mypage-customer-center {
+  margin: 4px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+
 .alert-item,
 .info-card,
 .reservation-card,
