@@ -10,6 +10,10 @@ function CategoryGrid() {
 
   return (
     <section className="category-section">
+      <div className="category-section__header">
+        <span>카테고리</span>
+      </div>
+
       <div className="category-grid">
         {homeCategories.map((category) => (
           <button
@@ -28,10 +32,6 @@ function CategoryGrid() {
           </button>
         ))}
       </div>
-
-      <button type="button" className="category-more-button">
-        카테고리 더보기 <span>›</span>
-      </button>
     </section>
   )
 }
