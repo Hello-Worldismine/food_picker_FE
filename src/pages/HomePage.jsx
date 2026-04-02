@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import HeroBanner from '../components/home/HeroBanner'
+import HeroBanner from '../components/Home/HeroBanner'
 import CategoryGrid from '../components/Home/CategoryGrid'
 import ProductTickerCard from '../components/Home/ProductTickerCard'
 import SectionTitle from '../components/common/SectionTitle'
