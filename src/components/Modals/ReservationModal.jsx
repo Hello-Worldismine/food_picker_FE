@@ -99,7 +99,7 @@ function ReservationModal({ isOpen, onClose, product, storeName, onConfirm }) {
 
         <div className="reservation-helper">
           <ShoppingBag size={16} />
-          <p>예약 후 30분 이내에 픽업하지 않으면 자동 취소되는 것으로 가정합니다.</p>
+          <p>예약 후 2시간 이내에 픽업하지 않으면 자동 취소되는 것으로 가정합니다.</p>
         </div>
 
         <div className="reservation-modal__actions">

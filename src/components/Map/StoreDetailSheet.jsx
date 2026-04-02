@@ -63,11 +63,11 @@ function StoreDetailSheet({ store, onClose }) {
         <div className="store-product-list">
           {store.products.map((product) => (
             <StoreProductRow
-              key={product.id}
-              product={product}
-              storeName={store.name}
-              onOpenAlert={setSelectedProduct}
-            />
+            key={product.id}
+            product={product}
+            store={store}
+            onOpenAlert={setSelectedProduct}
+          />
           ))}
         </div>
       </section>

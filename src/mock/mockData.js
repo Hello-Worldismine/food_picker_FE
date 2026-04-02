@@ -315,12 +315,10 @@ export const homeCategories = [
   { id: 2, label: '초밥', emoji: '🍣' },
   { id: 3, label: '샌드위치', emoji: '🥪' },
   { id: 4, label: '베이커리', emoji: '🥐' },
-  { id: 5, label: '도시락', emoji: '🍱' },
+  { id: 5, label: '반찬', emoji: '🍱' },
   { id: 6, label: '샐러드', emoji: '🥗' },
   { id: 7, label: '디저트', emoji: '🍰' },
   { id: 8, label: '음료', emoji: '🥤' },
-  { id: 9, label: '즉석식품', emoji: '🍜' },
-  { id: 10, label: '이벤트', emoji: '🎁', badge: '특가' },
 ]
 
 export function getFilteredProductsByCategory(categoryLabel) {
@@ -332,19 +330,14 @@ export function getFilteredProductsByCategory(categoryLabel) {
     return [...products].sort((a, b) => a.remainMinutes - b.remainMinutes)
   }
 
-  if (categoryLabel === '이벤트') {
-    return products.filter((item) => item.dropRate >= 35)
-  }
-
   const categoryMap = {
     초밥: '초밥',
     샌드위치: '샌드위치',
     베이커리: '베이커리',
-    도시락: '도시락',
+    도시락: '반찬',
     샐러드: '샐러드',
     디저트: '디저트',
     음료: '음료',
-    즉석식품: '즉석식품',
   }
 
   const mappedCategory = categoryMap[categoryLabel]
